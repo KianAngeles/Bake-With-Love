@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake With Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&family=Poppins:wght@400;600&family=Quicksand:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Labrada:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+<style>
+    main {
+        padding-top: 90px;
+    }
+</style>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Bake With Love Logo" class="logo-img">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="header-right">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="product_list.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="product_list.html">
+                    <img src="assets/icons/cart.png" alt="Cart" class="cart-img">
+                    <span class="cart-count">0</span>
+                </a>
+                <!-- Sneak peek dropdown -->
+                <div class="cart-preview">
+                    <p class="empty-preview">Your cart is empty</p>
+                    <div class="cart-preview-items"></div>
+                    <div class="cart-preview-total"></div>
+                    <a href="product_list.html" class="view-cart-btn">View Cart</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="product-list-container">
+            <!-- Products -->
+            <section class="products">
+                <div class="products-header">
+                    <h2>Products</h2>
+
+                    <div class="filters">
+                        <!-- Category Filter -->
+                        <label for="filterCategory" class="filter-label">Category:</label>
+                        <select id="filterCategory">
+                            <option value="all">All</option>
+                            <option value="cake">Cakes</option>
+                            <option value="bread">Breads</option>
+                            <option value="cookie">Cookies</option>
+                            <option value="pastry">Pastries</option>
+                        </select>
+
+                        <!-- Rating Filter -->
+                        <label for="filterRating" class="filter-label">Rating:</label>
+                        <select id="filterRating">
+                            <option value="all">All Ratings</option>
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="1">★☆☆☆☆</option>
+                        </select>
+
+                        <!-- Price Sort -->
+                        <label for="sortPrice" class="filter-label">Price:</label>
+                        <select id="sortPrice">
+                            <option value="default">Sort by Price</option>
+                            <option value="asc">Low → High</option>
+                            <option value="desc">High → Low</option>
+                        </select>
+
+                        <!-- Search bar only on product_list.php -->
+                        <div class="search-container">
+                            <input type="text" id="searchBar" placeholder="Search products">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-list">
+
+                    <!-- Chocolate Cupcake -->
+                    <div class="product-card" data-category="cake" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Chocolate Cupcake</h3>
+                            <div class="rating"></div>
+                            <p>Rich chocolate cupcake with frosting</p>
+                            <span class="price">₱150</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/chococupcake.PNG" alt="Chocolate Cupcake">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Chocolate Cupcake',150,'assets/products/chococupcake.PNG')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Ensaymada -->
+                    <div class="product-card" data-category="bread" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Ensaymada</h3>
+                            <div class="rating"></div>
+                            <p>Pillowy bread with butter, cheese</p>
+                            <span class="price">₱120</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/ensaymada.png" alt="Ensaymada">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Ensaymada',120,'assets/products/ensaymada.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Mango Cake -->
+                    <div class="product-card" data-category="cake" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Mango Cake</h3>
+                            <div class="rating"></div>
+                            <p>Juicy mango layers with sponge cake</p>
+                            <span class="price">₱140</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/mangocake.png" alt="Mango Cake">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Mango Cake',140,'assets/products/mangocake.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Vanilla Layer Cake -->
+                    <div class="product-card" data-category="cake" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Vanilla Layer Cake</h3>
+                            <div class="rating"></div>
+                            <p>Moist vanilla cake with cream</p>
+                            <span class="price">₱450</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/vanillacake.PNG" alt="Vanilla Layer Cake">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Vanilla Layer Cake',450,'assets/products/vanillacake.PNG')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Blueberry Muffin -->
+                    <div class="product-card" data-category="pastry" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Blueberry Muffin</h3>
+                            <div class="rating"></div>
+                            <p>Fresh blueberries in every bite</p>
+                            <span class="price">₱130</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/blueberrymuffin.PNG" alt="Blueberry Muffin">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Blueberry Muffin',130,'assets/products/blueberrymuffin.PNG')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Creamcheese Bread -->
+                    <div class="product-card" data-category="bread" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Creamcheese Bread</h3>
+                            <div class="rating"></div>
+                            <p>Soft bread with creamy cheese filling</p>
+                            <span class="price">₱350</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/creambread.png" alt="Creamcheese Bread">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Creamcheese Bread',350,'assets/products/creambread.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Chocolate Chip Cookie -->
+                    <div class="product-card" data-category="cookie" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Chocolate Chip Cookie</h3>
+                            <div class="rating"></div>
+                            <p>Loaded with melty chocolate chips</p>
+                            <span class="price">₱180</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/chocochipcookie.PNG" alt="Chocolate Chip Cookie">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Chocolate Chip Cookie',180,'assets/products/chocochipcookie.PNG')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Chocolate Donut -->
+                    <div class="product-card" data-category="pastry" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Chocolate Donut</h3>
+                            <div class="rating"></div>
+                            <p>Soft donut with chocolate glaze</p>
+                            <span class="price">₱90</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/chocodonut.PNG" alt="Chocolate Donut">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Chocolate Donut',90,'assets/products/chocodonut.PNG')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Cheesecake Slice -->
+                    <div class="product-card" data-category="cake" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Cheesecake Slice</h3>
+                            <div class="rating"></div>
+                            <p>Creamy cheesecake with crust</p>
+                            <span class="price">₱200</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/cheesecake.PNG" alt="Cheesecake Slice">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Cheesecake Slice',200,'assets/products/cheesecake.PNG')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Oatmeal Raisin Cookie -->
+                    <div class="product-card" data-category="cookie" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Oatmeal Raisin Cookie</h3>
+                            <div class="rating"></div>
+                            <p>Chewy cookie with oats and raisins</p>
+                            <span class="price">₱160</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/oatmealraisin.png" alt="Oatmeal Raisin Cookie">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Oatmeal Raisin Cookie',160,'assets/products/oatmealraisin.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Double Chocolate Cookie -->
+                    <div class="product-card" data-category="cookie" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Double Chocolate Cookie</h3>
+                            <div class="rating"></div>
+                            <p>Rich chocolate cookie with extra chips</p>
+                            <span class="price">₱170</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/doublechococookie.jpg" alt="Double Chocolate Cookie">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Double Chocolate Cookie',170,'assets/products/doublechococookie.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Croissant -->
+                    <div class="product-card" data-category="pastry" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Croissant</h3>
+                            <div class="rating"></div>
+                            <p>Flaky buttery French pastry</p>
+                            <span class="price">₱110</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/croissant.jpg" alt="Croissant">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Croissant',110,'assets/products/croissant.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Apple Turnover -->
+                    <div class="product-card" data-category="pastry" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Apple Turnover</h3>
+                            <div class="rating"></div>
+                            <p>Pastry filled with sweet apple filling</p>
+                            <span class="price">₱150</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/appleturnover.png" alt="Apple Turnover">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Apple Turnover',150,'assets/products/appleturnover.png')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Garlic Bread -->
+                    <div class="product-card" data-category="bread" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Garlic Bread</h3>
+                            <div class="rating"></div>
+                            <p>Toasted bread with garlic and butter</p>
+                            <span class="price">₱100</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/garlicbread.jpg" alt="Garlic Bread">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Garlic Bread',100,'assets/products/garlicbread.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Focaccia Bread -->
+                    <div class="product-card" data-category="bread" data-rating="5" data-reviews="0">
+                        <div class="product-info">
+                            <h3>Focaccia Bread</h3>
+                            <div class="rating"></div>
+                            <p>Italian bread seasoned with herbs</p>
+                            <span class="price">₱180</span>
+                        </div>
+                        <div class="product-image">
+                            <img src="assets/products/focacciabread.jpg" alt="Focaccia Bread">
+                        </div>
+                        <button class="add-to-cart-btn"
+                            onclick="addToCart('Focaccia Bread',180,'assets/products/focacciabread.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Cart Info -->
+            <aside class="cart">
+                <h2>Your cart</h2>
+                <div id="cart-items" class="empty-cart">
+                    <img src="assets/images/cart.png" alt="Cart Icon">
+                    <p>Your Cart is Empty</p>
+                </div>
+
+                <div class="cart-total">
+                    <p>Total <span id="total-price">₱0</span></p>
+                    <hr>
+                    <button id="checkout-btn">Checkout</button>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- Receipt Confirmation Popup -->
+        <div id="receipt-popup" class="popup-overlay">
+            <div class="popup-content">
+                <h2>Order Receipt</h2>
+                <div id="receipt-details"></div>
+                <p><strong>Total:</strong> <span id="receipt-total"></span></p>
+                <div style="margin-top: 15px;">
+                    <button id="confirm-order" style="margin-right: 10px;">Confirm</button>
+                    <button id="cancel-order">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Popup -->
+        <div id="checkout-popup" class="popup-overlay">
+            <div class="popup-content">
+                <h2>Thank You for Purchasing! ❤️</h2>
+                <p>Your delicious treats are on their way!</p>
+                <button id="close-popup">Close</button>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <!-- ABOUT -->
+            <div class="footer-col footer-about">
+                <h3 class="footer-title">ABOUT Bake With Love</h3>
+                <p class="footer-text">
+                    At Bake With Love, we believe every recipe should be made with passion,
+                    warmth, and a touch of sweetness. From fresh bread to delightful pastries,
+                    our mission is to spread joy through baking.
+                </p>
+                <p class="footer-text">
+                    Thank you for letting us be part of your kitchen and your celebrations.
+                    Together, let’s keep making moments sweeter.
+                </p>
+
+                <div class="footer-social" aria-label="Social media links">
+                    <a class="social-btn" href="https://www.facebook.com" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <img src="assets/icons/facebook.png" alt="Facebook">
+                    </a>
+                    <a class="social-btn" href="https://www.youtube.com" target="_blank" rel="noopener"
+                        aria-label="YouTube">
+                        <img src="assets/icons/youtube.png" alt="YouTube">
+                    </a>
+                    <a class="social-btn" href="https://www.twitter.com" target="_blank" rel="noopener"
+                        aria-label="Twitter">
+                        <img src="assets/icons/twitter.png" alt="Twitter">
+                    </a>
+                    <a class="social-btn" href="https://www.instagram.com" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <img src="assets/icons/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+            <!-- SEARCH / CONTACT -->
+            <div class="footer-col footer-search">
+                <h3 class="footer-title">Contacts</h3>
+
+
+                <ul class="contact-list" aria-label="Contact information">
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor" d="M12 2l5 4v14H7V6l5-4zM12 4.1L8.9 7h6.2L12 4.1z" />
+                        </svg>
+                        <span>Pampanga, Angeles City</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <a href="mailto:contact@example.com">angeleskiancharles@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 01.9-.3c1 .2 2 .3 3 .3a1 1 0 011 1V20a1 1 0 01-1 1C10.1 21 3 13.9 3 4a1 1 0 011-1h2.5a1 1 0 011 1c0 1 .1 2 .3 3 .1.4 0 .8-.3.9l-2.9 2.9z" />
+                        </svg>
+                        <span>+69 929 641 8227</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div class="footer-col footer-hours">
+                <h3 class="footer-title">OPENING HOURS</h3>
+
+                <ul class="hours-list" aria-label="Opening hours">
+                    <li><span class="label">Mon - Thu:</span><span class="time">10am - 8pm</span></li>
+                    <li><span class="label">Fri - Sat:</span><span class="time">10am - 6pm</span></li>
+                    <li><span class="label">Sunday:</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Bake With Love. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

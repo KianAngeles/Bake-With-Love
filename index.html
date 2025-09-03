@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake With Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&family=Poppins:wght@400;600&family=Quicksand:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Labrada:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <header class="transparent-header">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Bake With Love Logo" class="logo-img">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="header-right">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="product_list.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="product_list.html">
+                    <img src="assets/icons/cart.png" alt="Cart" class="cart-img">
+                    <span class="cart-count">0</span>
+                </a>
+                <!-- Sneak peek dropdown -->
+                <div class="cart-preview">
+                    <p class="empty-preview">Your cart is empty</p>
+                    <div class="cart-preview-items"></div>
+                    <div class="cart-preview-total"></div>
+                    <a href="product_list.html" class="view-cart-btn">View Cart</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- HERO -->
+        <section class="landing-hero">
+            <div class="hero-content">
+                <h2>Crafting Delightful <span id="hero-word">Pastries</span></h2>
+                <p>Freshly baked, made with love and care, delivered to your table.</p>
+                <a href="product_list.html" class="landing-cta">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Best Sellers-->
+        <!-- === Landing "Our Best Menu" === -->
+        <section class="landing-menu">
+            <div class="landing-menu-head">
+                <h2 class="landing-menu-title">Our Best Sellers</h2>
+
+                <div class="landing-menu-subrow">
+                    <p class="landing-menu-sub">
+                        Experience the magic of our bakery and pastry mastery. With 3 awards won for our delectable
+                        creations, each bite is a celebration of flavor and craftsmanship
+                    </p>
+                </div>
+
+                <!-- Line -->
+                <div class="landing-menu-rule"></div>
+            </div>
+
+            <!-- image strip -->
+            <div class="landing-menu-viewport">
+                <div class="landing-menu-track" id="landingMenuTrack">
+                    <div class="landing-menu-card">
+                        <a href="product_list.html?name=Cheesecake&price=200&image=assets/products/cheesecake.PNG">
+                            <img src="assets/products/cheesecake.PNG" alt="Cheesecake">
+                            <span>Cheesecake</span>
+                        </a>
+                    </div>
+
+                    <div class="landing-menu-card">
+                        <a
+                            href="product_list.html?name=Chocolate Cupcake&price=150&image=assets/products/chococupcake.PNG">
+                            <img src="assets/products/chococupcake.PNG" alt="Chocolate Cupcake">
+                            <span>Chocolate Cupcake</span>
+                        </a>
+                    </div>
+
+                    <div class="landing-menu-card">
+                        <a href="product_list.html?name=Vanilla Cake&price=180&image=assets/products/vanillacake.PNG">
+                            <img src="assets/products/vanillacake.PNG" alt="Vanilla Cake">
+                            <span>Vanilla Cake</span>
+                        </a>
+                    </div>
+
+                    <div class="landing-menu-card">
+                        <a href="product_list.html?name=Cream Bread&price=120&image=assets/products/creambread.png">
+                            <img src="assets/products/creambread.png" alt="Cream Bread">
+                            <span>Cream Bread</span>
+                        </a>
+                    </div>
+
+                    <div class="landing-menu-card">
+                        <a
+                            href="product_list.html?name=Blueberry Muffin&price=160&image=assets/products/blueberrymuffin.PNG">
+                            <img src="assets/products/blueberrymuffin.PNG" alt="Blueberry Muffin">
+                            <span>Blueberry Muffin</span>
+                        </a>
+                    </div>
+
+                    <div class="landing-menu-card">
+                        <a href="product_list.html?name=Mango Cake&price=190&image=assets/products/mangocake.png">
+                            <img src="assets/products/mangocake.png" alt="Mango Cake">
+                            <span>Mango Cake</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- FEATURE SECTION -->
+        <section class="landing-feature">
+            <h2>Crafting sweet moments with every creation</h2>
+            <p>Our pastries are freshly baked daily, using only the best ingredients.</p>
+            <div class="landing-feature-grid">
+                <img src="assets/products/cheesecake.PNG" alt="Cake">
+                <img src="assets/products/appleturnover.PNG" alt="Muffin">
+                <img src="assets/products/chocochipcookie.PNG" alt="Cookie">
+            </div>
+        </section>
+
+        <!-- SHOWCASE SECTION -->
+        <section class="landing-showcase">
+            <!-- Left text column -->
+            <div class="showcase-left">
+                <p class="tagline">Our signature specialty</p>
+                <h2>Bake Bliss Pastry</h2>
+            </div>
+
+            <!-- Right image column -->
+            <div class="showcase-right">
+                <div class="image-frame">
+                    <img src="assets/images/showcase.jpg" alt="Pastry Showcase">
+                </div>
+            </div>
+        </section>
+
+
+        <div class="section-divider">
+            <span>✦ ✦ ✦</span>
+        </div>
+
+
+        <!-- About Us -->
+        <section class="landing-about">
+            <h2 class="landing-about-title">OUR STORY</h2>
+
+            <div class="landing-about-grid">
+                <!-- Left Column -->
+                <div class="landing-about-block">
+                    <h3 class="landing-about-heading">How we create our first menu</h3>
+                    <p class="landing-about-text">
+                        From our very first recipe, we’ve poured passion and creativity into every pastry.
+                        What began as a simple menu quickly grew into a collection of favorites loved
+                        by our community. Each creation is made with care, using fresh ingredients that
+                        capture the essence of homemade goodness. Our journey started small, but it was
+                        built on big dreams and a love for baking.
+                    </p>
+                    <img src="assets/images/baker1.jpg" alt="Baker mixing flour" class="landing-about-img">
+                </div>
+
+                <!-- Right Column -->
+                <div class="landing-about-block">
+                    <img src="assets/images/baker2.jpg" alt="Baker slicing bread" class="landing-about-img">
+                    <h3 class="landing-about-heading landing-about-heading2">Baking joy into every bite for 5 years.
+                    </h3>
+                    <p class="landing-about-text">
+                        For over 5 years, we’ve been baking joy into every bite. Every pastry is carefully
+                        crafted with the finest ingredients, blending tradition with a touch of innovation.
+                        Along the way, we’ve earned the trust of our customers and even a few awards
+                        for our dedication to quality.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="landing-cta-banner">
+            <div class="circle small"></div>
+            <div class="circle medium"></div>
+            <div class="circle large"></div>
+            <div class="circle xsmall"></div>
+            <div class="circle xmedium"></div>
+
+            <div class="landing-cta-content">
+                <h2>Order Today & Taste the Difference!</h2>
+                <p>Freshly baked with love, delivered straight to your doorstep. Don’t miss out on our best-sellers!</p>
+                <div class="landing-cta-buttons">
+                    <a href="product_list.html" class="landing-btn landing-primary-btn">Shop Now</a>
+                    <a href="contact.html" class="landing-btn landing-secondary-btn">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>TESTIMONIALS</h2>
+            <p class="sub-text">What our customers say about our baked treats.</p>
+
+            <div class="testimonial-wrapper">
+                <!-- Left Arrow -->
+                <button class="arrow left" onclick="prevTestimonials()">&#10094;</button>
+
+                <!-- Testimonials -->
+                <div class="testimonial-container">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial1.jpg" alt="User 1" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Chocolate Cupcake was rich and decadent—moist cake with the perfect balance of
+                            chocolate. My kids loved it!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Emma Myers <span>Sweet Tooth Mom</span></h4>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial2.png" alt="User 2" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Ensaymada is fluffy, buttery, and topped with just the right amount of cheese. Perfect
+                            with my morning coffee!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Kim Ji-won <span>Food Enthusiast</span></h4>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial3.png" alt="User 3" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Mango Cake was absolutely divine—soft, moist, and bursting with fresh mango flavor.
+                            Definitely the best cake I’ve had in years!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Steph Curry <span>Pastry Lover</span></h4>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial4.jpg" alt="User 4" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Vanilla Layer Cake was elegant and delicious. The cream was light and not too
+                            sweet—perfect for celebrations!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Hanni Pham <span>Birthday Planner</span></h4>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial5.jpg" alt="User 5" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            I tried the Blueberry Muffin and it was packed with juicy berries. The sweetness was just
+                            right, making it light yet satisfying.
+                        </p>
+                        <h4>Kim Minji <span>Morning Snacker</span></h4>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial6.jpg" alt="User 6" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Cream Cheese Bread was heavenly—soft bread filled with rich, creamy goodness. Worth
+                            every penny!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Kang Haerin <span>Regular Buyer</span></h4>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial7.jpg" alt="User 7" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Chocolate Chip Cookie was chewy and packed with gooey chocolate chunks. Just the way I
+                            like it!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Danielle Marsh <span>Cookie Fan</span></h4>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial8.jpg" alt="User 8" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Chocolate Donut was soft, fluffy, and glazed to absolute perfection. The chocolate
+                            flavor was rich without being overly sweet
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Hyein Lee <span>Donut Lover</span></h4>
+                    </div>
+
+                    <!-- Testimonial 9 -->
+                    <div class="testimonial-box">
+                        <img src="assets/images/testimonial9.png" alt="User 9" class="testimonial-img">
+                        <p class="testimonial-text">
+                            <span class="quote">“</span>
+                            The Cheesecake Slice was creamy and smooth with just the right tartness. I’ll definitely be
+                            back for more!
+                            <span class="quote">”</span>
+                        </p>
+                        <h4>Kim Jun-hee <span>Dessert Addict</span></h4>
+                    </div>
+                </div>
+
+                <!-- Right Arrow -->
+                <button class="arrow right" onclick="nextTestimonials()">&#10095;</button>
+            </div>
+
+
+
+        </section>
+
+
+
+    </main>
+
+
+    <script src="script2.js"></script>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <!-- ABOUT -->
+            <div class="footer-col footer-about">
+                <h3 class="footer-title">ABOUT Bake With Love</h3>
+                <p class="footer-text">
+                    At Bake With Love, we believe every recipe should be made with passion,
+                    warmth, and a touch of sweetness. From fresh bread to delightful pastries,
+                    our mission is to spread joy through baking.
+                </p>
+                <p class="footer-text">
+                    Thank you for letting us be part of your kitchen and your celebrations.
+                    Together, let’s keep making moments sweeter.
+                </p>
+
+                <div class="footer-social" aria-label="Social media links">
+                    <a class="social-btn" href="https://www.facebook.com" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <img src="assets/icons/facebook.png" alt="Facebook">
+                    </a>
+                    <a class="social-btn" href="https://www.youtube.com" target="_blank" rel="noopener"
+                        aria-label="YouTube">
+                        <img src="assets/icons/youtube.png" alt="YouTube">
+                    </a>
+                    <a class="social-btn" href="https://www.twitter.com" target="_blank" rel="noopener"
+                        aria-label="Twitter">
+                        <img src="assets/icons/twitter.png" alt="Twitter">
+                    </a>
+                    <a class="social-btn" href="https://www.instagram.com" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <img src="assets/icons/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+
+
+            </div>
+
+            <!-- SEARCH / CONTACT -->
+            <div class="footer-col footer-search">
+                <h3 class="footer-title">Contacts</h3>
+
+
+                <ul class="contact-list" aria-label="Contact information">
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor" d="M12 2l5 4v14H7V6l5-4zM12 4.1L8.9 7h6.2L12 4.1z" />
+                        </svg>
+                        <span>Pampanga, Angeles City</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <a href="mailto:contact@example.com">angeleskiancharles@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 01.9-.3c1 .2 2 .3 3 .3a1 1 0 011 1V20a1 1 0 01-1 1C10.1 21 3 13.9 3 4a1 1 0 011-1h2.5a1 1 0 011 1c0 1 .1 2 .3 3 .1.4 0 .8-.3.9l-2.9 2.9z" />
+                        </svg>
+                        <span>+69 929 641 8227</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div class="footer-col footer-hours">
+                <h3 class="footer-title">OPENING HOURS</h3>
+
+                <ul class="hours-list" aria-label="Opening hours">
+                    <li><span class="label">Mon - Thu:</span><span class="time">10am - 8pm</span></li>
+                    <li><span class="label">Fri - Sat:</span><span class="time">10am - 6pm</span></li>
+                    <li><span class="label">Sunday:</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Bake With Love. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector("header");
+        const hero = document.querySelector(".landing-hero");
+
+        function updateHeader() {
+            const heroBottom = hero.offsetHeight;
+            if (window.scrollY > heroBottom - 50) {
+                header.classList.remove("transparent-header");
+            } else {
+                header.classList.add("transparent-header");
+            }
+        }
+
+        window.addEventListener("load", updateHeader);
+
+        window.addEventListener("scroll", updateHeader);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

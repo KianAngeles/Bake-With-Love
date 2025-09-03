@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake With Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&family=Poppins:wght@400;600&family=Quicksand:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Labrada:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Bake With Love Logo" class="logo-img">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="header-right">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="product_list.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="product_list.html">
+                    <img src="assets/icons/cart.png" alt="Cart" class="cart-img">
+                    <span class="cart-count">0</span>
+                </a>
+                <!-- Sneak peek dropdown -->
+                <div class="cart-preview">
+                    <p class="empty-preview">Your cart is empty</p>
+                    <div class="cart-preview-items"></div>
+                    <div class="cart-preview-total"></div>
+                    <a href="product_list.html" class="view-cart-btn">View Cart</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- === Contact Hero === -->
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Whether you have a question, feedback, or just want to say hello, our team is
+                here for you.</p>
+        </section>
+
+        <!-- === Contact Form & Info === -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="contact-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-details">
+                    <h2>Get in Touch</h2>
+
+                    <div class="contact-grid">
+                        <!-- Left Column -->
+                        <div class="contact-col">
+                            <ul class="contact-info">
+                                <h3>Socials</h3>
+                                <li>
+                                    <span class="icon">
+                                        <!-- Map Pin -->
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                    </span>
+                                    <span>Pampanga, Angeles City</span>
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <!-- Email -->
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M4 4h16v16H4z" />
+                                            <polyline points="22,6 12,13 2,6" />
+                                        </svg>
+                                    </span>
+                                    <a href="mailto:angeleskiancharles@gmail.com">angeleskiancharles@gmail.com</a>
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <!-- Phone -->
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M22 16.92V20a2 2 0 01-2.18 2A19.86 19.86 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.12.99.36 1.95.69 2.86a2 2 0 01-.45 2.11l-1.2 1.2a15.05 15.05 0 006 6l1.2-1.2a2 2 0 012.11-.45c.91.33 1.87.57 2.86.69A2 2 0 0122 16.92z" />
+                                        </svg>
+                                    </span>
+                                    <span>+69 929 641 8227</span>
+                                </li>
+                            </ul>
+
+                            <h3>Opening Hours</h3>
+                            <p>Mon - Thu: 10am - 8pm</p>
+                            <p>Fri - Sat: 10am - 6pm</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="contact-col">
+                            <h3>Follow Us</h3>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                                    class="contact-social-btn">
+                                    <img src="assets/icons/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener"
+                                    class="contact-social-btn">
+                                    <img src="assets/icons/instagram.png" alt="Instagram">
+                                </a>
+                                <a href="https://www.twitter.com" target="_blank" rel="noopener"
+                                    class="contact-social-btn">
+                                    <img src="assets/icons/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="https://www.youtube.com" target="_blank" rel="noopener"
+                                    class="contact-social-btn">
+                                    <img src="assets/icons/youtube.png" alt="YouTube">
+                                </a>
+                            </div>
+
+
+                            <h3>Customer Support</h3>
+                            <p>Need help with your order? Visit our <a href="feature.html#faq">FAQ page</a> or reach us
+                                on live
+                                chat from 9am–7pm daily.</p>
+
+                            <h3>Delivery Info</h3>
+                            <p>We deliver across Pampanga! Expect your freshly baked goodies within 1–2 days of placing
+                                your order.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- === Map Section === -->
+        <section class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7724.496499239211!2d120.586944!3d15.144167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDA4JzM5LjAiTiAxMjDCsDM1JzEyLjAiRQ!5e0!3m2!1sen!2sph!4v1681000000000"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+
+
+    </main>
+
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <!-- ABOUT -->
+            <div class="footer-col footer-about">
+                <h3 class="footer-title">ABOUT Bake With Love</h3>
+                <p class="footer-text">
+                    At Bake With Love, we believe every recipe should be made with passion,
+                    warmth, and a touch of sweetness. From fresh bread to delightful pastries,
+                    our mission is to spread joy through baking.
+                </p>
+                <p class="footer-text">
+                    Thank you for letting us be part of your kitchen and your celebrations.
+                    Together, let’s keep making moments sweeter.
+                </p>
+
+                <div class="footer-social" aria-label="Social media links">
+                    <a class="social-btn" href="https://www.facebook.com" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <img src="assets/icons/facebook.png" alt="Facebook">
+                    </a>
+                    <a class="social-btn" href="https://www.youtube.com" target="_blank" rel="noopener"
+                        aria-label="YouTube">
+                        <img src="assets/icons/youtube.png" alt="YouTube">
+                    </a>
+                    <a class="social-btn" href="https://www.twitter.com" target="_blank" rel="noopener"
+                        aria-label="Twitter">
+                        <img src="assets/icons/twitter.png" alt="Twitter">
+                    </a>
+                    <a class="social-btn" href="https://www.instagram.com" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <img src="assets/icons/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- SEARCH / CONTACT -->
+            <div class="footer-col footer-search">
+                <h3 class="footer-title">Contacts</h3>
+
+
+                <ul class="contact-list" aria-label="Contact information">
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor" d="M12 2l5 4v14H7V6l5-4zM12 4.1L8.9 7h6.2L12 4.1z" />
+                        </svg>
+                        <span>Pampanga, Angeles City</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <a href="mailto:contact@example.com">angeleskiancharles@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 01.9-.3c1 .2 2 .3 3 .3a1 1 0 011 1V20a1 1 0 01-1 1C10.1 21 3 13.9 3 4a1 1 0 011-1h2.5a1 1 0 011 1c0 1 .1 2 .3 3 .1.4 0 .8-.3.9l-2.9 2.9z" />
+                        </svg>
+                        <span>+69 929 641 8227</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div class="footer-col footer-hours">
+                <h3 class="footer-title">OPENING HOURS</h3>
+
+                <ul class="hours-list" aria-label="Opening hours">
+                    <li><span class="label">Mon - Thu:</span><span class="time">10am - 8pm</span></li>
+                    <li><span class="label">Fri - Sat:</span><span class="time">10am - 6pm</span></li>
+                    <li><span class="label">Sunday:</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Bake With Love. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script2.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

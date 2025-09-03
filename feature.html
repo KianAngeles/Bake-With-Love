@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake With Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&family=Poppins:wght@400;600&family=Quicksand:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Labrada:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<style>
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .header-right nav li a {
+        font-size: 1.5rem;
+    }
+</style>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Bake With Love Logo" class="logo-img">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="header-right">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="product_list.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="product_list.html">
+                    <img src="assets/icons/cart.png" alt="Cart" class="cart-img">
+                    <span class="cart-count">0</span>
+                </a>
+                <!-- Sneak peek dropdown -->
+                <div class="cart-preview">
+                    <p class="empty-preview">Your cart is empty</p>
+                    <div class="cart-preview-items"></div>
+                    <div class="cart-preview-total"></div>
+                    <a href="product_list.html" class="view-cart-btn">View Cart</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="feature-hero">
+            <div class="feature-hero-content">
+                <h2 class="feature-hero-title">A Bite of Heaven on Earth</h2>
+            </div>
+        </section>
+
+        <!-- OUR SPECIALS -->
+        <section class="specialties">
+            <h2>Our Signature Treats</h2>
+            <p>Discover our best-selling and most unique creations, made with a special touch of passion and flavor.</p>
+
+            <div class="specialty-grid">
+
+                <!-- Chocolate Chip Cookie -->
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="assets/products/chocochipcookie.PNG" alt="Chocolate Chip Cookie">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Chocolate Chip Cookie</h3>
+                        <p>A timeless classic with a perfect balance of crispy edges and a soft, chewy center,
+                            generously loaded with rich, melt-in-your-mouth chocolate chips.</p>
+                        <div class="price">₱80</div>
+                        <a class="feature-add-to-cart"
+                            href="product_list.html?name=Chocolate Chip Cookie&price=80&image=assets/products/chocochipcookie.PNG">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cheesecake Slice -->
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="assets/products/cheesecake.PNG" alt="Cheesecake Slice">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Cheesecake Slice</h3>
+                        <p>Indulge in a smooth, creamy, and decadent slice of cheesecake with a buttery graham cracker
+                            crust. A simple yet luxurious dessert.</p>
+                        <div class="price">₱150</div>
+                        <a class="feature-add-to-cart"
+                            href="product_list.html?name=Cheesecake Slice&price=150&image=assets/products/cheesecake.PNG">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vanilla Layer Cake -->
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="assets/products/vanillacake.PNG" alt="Vanilla Layer Cake">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Vanilla Layer Cake</h3>
+                        <p>Our classic vanilla layer cake, featuring light and fluffy vanilla sponge layers frosted with
+                            a silky-smooth vanilla buttercream. Perfect for any celebration.</p>
+                        <div class="price">₱280</div>
+                        <a class="feature-add-to-cart"
+                            href="product_list.html?name=Vanilla Layer Cake&price=280&image=assets/products/vanillacake.PNG">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blueberry Muffin -->
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="assets/products/blueberrymuffin.PNG" alt="Blueberry Muffin">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Blueberry Muffin</h3>
+                        <p>A moist and tender muffin bursting with plump, juicy blueberries and topped with a delicate
+                            streusel crumb for an irresistible crunch.</p>
+                        <div class="price">₱95</div>
+                        <a class="feature-add-to-cart"
+                            href="product_list.html?name=Blueberry Muffin&price=95&image=assets/products/blueberrymuffin.PNG">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <span>✦ ✦ ✦</span>
+        </div>
+
+        <!-- === Whats On Plate Section === -->
+        <section class="whats-on-plate">
+            <div class="whats-on-plate-inner">
+                <div class="whats-on-plate-image">
+                    <img src="assets/images/featured-infographic.png" alt="What's on the Plate? Croissant Dish">
+                </div>
+
+                <div class="whats-on-plate-text">
+                    <h2>What’s on the Plate?</h2>
+                    <p>
+                        Every bite tells a story. Our freshly baked <strong>buttery croissant</strong>
+                        is paired with savory <strong>bratwurst sausage</strong>, crisp <strong>cucumber
+                            slices</strong>,
+                        and peppery <strong>arugula leaves</strong>. It’s a balance of flavor and texture that’s both
+                        comforting and refreshing.
+                    </p>
+                    <p>
+                        Perfect for breakfast, brunch, or a light snack, this dish brings together wholesome ingredients
+                        and artisanal baking techniques.
+                        Whether you’re sharing it with friends or enjoying it on your own, it’s designed to delight your
+                        taste buds and brighten your day.
+                    </p>
+                    <blockquote>
+                        “Discover the simple joy of quality ingredients, baked and crafted with love.”
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- === Why Choose Us === -->
+        <section class="feature-choose">
+            <div class="feature-choose-container">
+                <div class="feature-choose-header">
+                    <h2 class="feature-choose-title">
+                        Why Choose <span class="feature-choose-accent">Us</span>
+                    </h2>
+                    <p class="feature-choose-subtitle">
+                        Perfect pastries, minus the hassle. Premium ingredients, chef-tested recipes, and kits that make
+                        baking easy.
+                    </p>
+                </div>
+
+                <div class="feature-choose-grid">
+                    <!-- Card 1 -->
+                    <article class="feature-choose-item">
+                        <div class="feature-choose-icon">
+                            <img src="assets/icons/baking.png" alt="Handcrafted Pastry Kits" class="small-icons">
+                        </div>
+                        <div class="feature-choose-number">01</div>
+                        <h3 class="feature-choose-item-title">Handcrafted Pastry Kits</h3>
+                        <p class="feature-choose-text">
+                            Curated kits with pre-measured components so your croissants, cookies, and cakes come out
+                            just right.
+                        </p>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="feature-choose-item">
+                        <div class="feature-choose-icon">
+                            <img src="assets/icons/dairy-food.png" alt="Fresh, Premium Ingredients">
+                        </div>
+                        <div class="feature-choose-number">02</div>
+                        <h3 class="feature-choose-item-title">Fresh, Premium Ingredients</h3>
+                        <p class="feature-choose-text">
+                            From Belgian chocolate to real vanilla—quality you can taste in every buttery bite.
+                        </p>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="feature-choose-item">
+                        <div class="feature-choose-icon">
+                            <img src="assets/icons/croissant.png" alt="Bakery-Quality Results">
+                        </div>
+                        <div class="feature-choose-number">03</div>
+                        <h3 class="feature-choose-item-title">Bakery-Quality Results</h3>
+                        <p class="feature-choose-text">
+                            Chef-tested recipes with clear steps for flaky layers, perfect rise, and golden finishes.
+                        </p>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="feature-choose-item">
+                        <div class="feature-choose-icon">
+                            <img src="assets/icons/limited-edition.png" alt="Convenient Nationwide Delivery"
+                                class="small-icons">
+                        </div>
+                        <div class="feature-choose-number">04</div>
+                        <h3 class="feature-choose-item-title">Seasonal & Limited Editions</h3>
+                        <p class="feature-choose-text">
+                            Exciting pastry kits inspired by the seasons—exclusive flavors that keep your baking fresh
+                            and fun.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider2">
+            <div class="marquee">
+                <div class="track" id="marquee-track">
+                    <span>✨ MADE-FOR-YOU PASTRIES ✨</span>
+                    <span>🥐 FRESHLY BAKED DAILY 🥐</span>
+                    <span>🍰 SWEET MOMENTS 🍰</span>
+                    <span>🥖 ARTISAN BREADS 🥖</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- === Video / Interactive Section === -->
+        <section class="feature-video">
+            <div class="feature-video-container">
+                <h1>Meet The Baker</h1>
+                <div class="feature-video-grid">
+                    <!-- Left: Video -->
+                    <div class="feature-video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/nWKxG9uobHQ"
+                            title="A Day in My Life Baking 1000 Cookies" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- Right: Text -->
+                    <div class="feature-video-content">
+                        <h2 class="feature-video-title">A Day in My Life</h2>
+                        <h3 class="feature-video-subtitle">Baking 1000 Cookies</h3>
+                        <p class="feature-video-text">
+                            Step into our kitchen and watch the magic happen — from mixing rich dough to pulling trays
+                            of golden,
+                            buttery cookies out of the oven. Each cookie is baked with precision, care, and a sprinkle
+                            of love,
+                            bringing joy to thousands of happy customers every day.
+                        </p>
+                        <p class="feature-video-text">
+                            Our mornings begin before sunrise, as the ovens warm up and the first batches of dough are
+                            prepared.
+                            The aroma of butter, sugar, and chocolate fills the air, setting the tone for a busy but
+                            rewarding day.
+                            Every batch is carefully measured and mixed to ensure consistency, because we believe that
+                            quality
+                            should never be compromised no matter how large the order.
+                        </p>
+                        <p class="feature-video-text">
+                            From rolling dough balls to arranging them neatly on trays, every step is a labor of love.
+                            While the cookies bake to golden perfection, we’re already preparing the next batch,
+                            moving in a rhythm that blends speed with artistry.
+                            By the end of the day, more than a thousand cookies have passed through our ovens,
+                            each one carrying the same promise of freshness and flavor.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="feature-cta">
+            <div class="feature-cta-container">
+                <div class="cta-left-section">
+                </div>
+                <div class="cta-right-section">
+                    <h1>YOU SAY IT, WE BAKE IT!</h1>
+                    <p>Our pastry chefs work hard to ensure your baking process is smooth and fun. Get baking in as
+                        little as 3 steps.</p>
+                    <a href="product_list.html" class="cta-btn">SEE THE MENU</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- === FAQ Section === -->
+        <section class="faq" id="faq">
+            <div class="faq-container">
+                <h2 class="faq-title">Frequently Asked <span>Questions</span></h2>
+                <p class="faq-subtitle">Here are some common questions our customers ask about our pastries.</p>
+
+                <div class="faq-items">
+                    <!-- Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question">What types of pastries do you sell?</button>
+                        <div class="faq-answer">
+                            <p>We offer a wide range of freshly baked goods, including breads, cakes, cookies, muffins,
+                                and specialty seasonal pastries.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question">Are your pastries baked fresh daily?</button>
+                        <div class="faq-answer">
+                            <p>Yes! All of our pastries are baked fresh every morning to ensure the best taste and
+                                quality for our customers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question">Do you offer custom cakes or pastries?</button>
+                        <div class="faq-answer">
+                            <p>Not yet, but we’re planning to offer custom cakes and pastries soon.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question">Do you have gluten-free or sugar-free options?</button>
+                        <div class="faq-answer">
+                            <p>Yes, we have select gluten-free and sugar-free pastries available. Please ask our staff
+                                or check the menu for availability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question">Can I place an order online or for delivery?</button>
+                        <div class="faq-answer">
+                            <p>Yes, we accept both online and phone orders. Delivery and pickup options are available
+                                depending on your location.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="faq-item">
+                        <button class="faq-question">Do you cater for events?</button>
+                        <div class="faq-answer">
+                            <p>We do! We provide pastry platters, cakes, and desserts for birthdays, weddings, and
+                                corporate events. Contact us for catering packages.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="faq-item">
+                        <button class="faq-question">What payment methods do you accept?</button>
+                        <div class="faq-answer">
+                            <p>We accept cash, credit/debit cards, and popular e-wallets. Online orders can also be paid
+                                via secure payment channels.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 8-->
+                    <div class="faq-item">
+                        <button class="faq-question">Do you bake everything fresh daily?</button>
+                        <div class="faq-answer">
+                            <p>Absolutely! All our pastries are baked fresh every morning to ensure the best taste and
+                                quality. Nothing stays overnight — if it’s on our shelves, it was baked today.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </main>
+    <script src="script2.js"></script>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <!-- ABOUT -->
+            <div class="footer-col footer-about">
+                <h3 class="footer-title">ABOUT Bake With Love</h3>
+                <p class="footer-text">
+                    At Bake With Love, we believe every recipe should be made with passion,
+                    warmth, and a touch of sweetness. From fresh bread to delightful pastries,
+                    our mission is to spread joy through baking.
+                </p>
+                <p class="footer-text">
+                    Thank you for letting us be part of your kitchen and your celebrations.
+                    Together, let’s keep making moments sweeter.
+                </p>
+
+                <div class="footer-social" aria-label="Social media links">
+                    <a class="social-btn" href="https://www.facebook.com" target="_blank" rel="noopener"
+                        aria-label="Facebook">
+                        <img src="assets/icons/facebook.png" alt="Facebook">
+                    </a>
+                    <a class="social-btn" href="https://www.youtube.com" target="_blank" rel="noopener"
+                        aria-label="YouTube">
+                        <img src="assets/icons/youtube.png" alt="YouTube">
+                    </a>
+                    <a class="social-btn" href="https://www.twitter.com" target="_blank" rel="noopener"
+                        aria-label="Twitter">
+                        <img src="assets/icons/twitter.png" alt="Twitter">
+                    </a>
+                    <a class="social-btn" href="https://www.instagram.com" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <img src="assets/icons/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+            <!-- SEARCH / CONTACT -->
+            <div class="footer-col footer-search">
+                <h3 class="footer-title">Contacts</h3>
+
+
+                <ul class="contact-list" aria-label="Contact information">
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor" d="M12 2l5 4v14H7V6l5-4zM12 4.1L8.9 7h6.2L12 4.1z" />
+                        </svg>
+                        <span>Pampanga, Angeles City</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <a href="mailto:contact@example.com" class="footer-email">angeleskiancharles@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 01.9-.3c1 .2 2 .3 3 .3a1 1 0 011 1V20a1 1 0 01-1 1C10.1 21 3 13.9 3 4a1 1 0 011-1h2.5a1 1 0 011 1c0 1 .1 2 .3 3 .1.4 0 .8-.3.9l-2.9 2.9z" />
+                        </svg>
+                        <span>+69 929 641 8227</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div class="footer-col footer-hours">
+                <h3 class="footer-title">OPENING HOURS</h3>
+
+                <ul class="hours-list" aria-label="Opening hours">
+                    <li><span class="label">Mon - Thu:</span><span class="time">10am - 8pm</span></li>
+                    <li><span class="label">Fri - Sat:</span><span class="time">10am - 6pm</span></li>
+                    <li><span class="label">Sunday:</span><span class="time">Closed</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Bake With Love. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
