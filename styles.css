@@ -56,6 +56,7 @@ header {
   z-index: 1000;
   background-color: var(--primary);
   transition: background-color 0.3s ease;
+  height: 40px;
 }
 
 header.transparent-header {
@@ -76,11 +77,29 @@ header .logo-img {
   height: 50px;
 }
 
-header h1 {
-  font-family: 'Lemonada', cursive;
+.logo-img {
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the image */
+.logo:hover .logo-img {
+  transform: rotate(-5deg) scale(1.1); 
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+
+.logo h1 {
   font-size: 1.5rem;
   color: var(--light-bg);
-  margin: 0;
+  font-family: 'Lemonada', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s ease; 
+}
+
+.logo:hover h1 {
+  color: #ffe0d5;             
+  transform: scale(1.05);     
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
 /* Right side: nav + cart */
