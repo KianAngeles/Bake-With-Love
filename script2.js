@@ -72,12 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
   showTestimonials();
 });
 
-
-
-
-
-
-
 /* Landing Hero Text Switch */
 document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".landing-hero");
@@ -194,6 +188,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-
-

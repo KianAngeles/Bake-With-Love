@@ -6,14 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!burgerBtn || !navMenu || !header) return;
 
-    // Toggle menu
     burgerBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = navMenu.classList.toggle('show');
         burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close when clicking outside the header
     document.addEventListener('click', (e) => {
         if (!header.contains(e.target)) {
             navMenu.classList.remove('show');
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             navMenu.classList.remove('show');
