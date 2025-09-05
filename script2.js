@@ -155,36 +155,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Contact form handler
+// === Contact form handler with EmailJS + Popup + Confetti ===
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form form");
+  const successPopup = document.getElementById("success-popup");
+  const errorPopup = document.getElementById("error-popup");
 
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const name = form.querySelector("input[name='name']").value.trim();
-      const email = form.querySelector("input[name='email']").value.trim();
-      const message = form.querySelector("textarea[name='message']").value.trim();
+      // Send using EmailJS
+      emailjs.sendForm("service_7efekja", "template_hszffcd", form)
+        .then(() => {
+          form.reset();
+          showPopup(successPopup);
 
-      if (!name || !email || !message) {
-        alert("Please fill out all fields before submitting.");
-        return;
-      }
-
-      console.log("Form submitted:", { name, email, message });
-
-      alert("🎉 Thank you, " + name + "! Your message has been sent.");
-
-      form.reset();
-
-      if (typeof confetti === "function") {
-        confetti({
-          particleCount: 120,
-          spread: 70,
-          origin: { y: 0.6 }
+          // 🎉 Confetti
+          if (typeof confetti === "function") {
+            confetti({
+              particleCount: 120,
+              spread: 70,
+              origin: { y: 0.6 }
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("EmailJS error:", error);
+          showPopup(errorPopup);
         });
-      }
     });
   }
+
+  // Popup utility
+  function showPopup(popup) {
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }
 });
+

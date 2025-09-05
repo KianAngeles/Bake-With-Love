@@ -210,6 +210,39 @@
     </main>
 
 
+    <!-- Success Popup -->
+    <div id="success-popup" style="display:none; 
+            position:fixed; 
+            top:20px; 
+            right:20px; 
+            background:#28a745; /* Green */
+            color:var(--white); 
+            padding:15px 20px; 
+            border-radius:10px; 
+            box-shadow:0 4px 10px rgba(0,0,0,0.2); 
+            font-family:'Poppins', sans-serif;
+            font-size:16px; 
+            z-index:9999;">
+        ✅ Message Sent Successfully!
+    </div>
+
+    <!-- Error Popup -->
+    <div id="error-popup" style="display:none; 
+            position:fixed; 
+            top:20px; 
+            right:20px; 
+            background:#dc3545; /* Red */
+            color:var(--white); 
+            padding:15px 20px; 
+            border-radius:10px; 
+            box-shadow:0 4px 10px rgba(0,0,0,0.2); 
+            font-family:'Poppins', sans-serif;
+            font-size:16px; 
+            z-index:9999;">
+        ❌ Failed to send message. Please try again.
+    </div>
+
+
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
             <!-- ABOUT -->
@@ -245,6 +278,8 @@
                 </div>
 
             </div>
+
+
 
             <!-- CONTACT -->
             <div class="footer-col footer-contact">
@@ -293,6 +328,15 @@
     </footer>
     <script src="script2.js"></script>
     <script src="script.js"></script>
+
+    <!-- EMAIL NOTIFS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("WdiGdPqSo4O45z8Pw");
+        })();
+    </script>
+
 </body>
 
 </html>
