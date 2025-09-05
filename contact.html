@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bake With Love</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaquery.css">
     <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <link
@@ -49,6 +50,31 @@
                 </div>
             </div>
         </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <header class="site-header">
+        <button class="mobile-burger" id="mobile-burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <a href="index.html" class="mobile-logo">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="mobile-cart-icon">
+            <a href="product_list.html#cart-link">
+                <img src="assets/icons/cart.png" alt="Cart" class="mobile-cart-img">
+                <span class="mobile-cart-count">0</span>
+            </a>
+        </div>
+
+        <nav class="mobile-nav-links" id="mobile-nav-menu">
+            <a href="index.html">Home</a>
+            <a href="feature.html">Features</a>
+            <a href="product_list.html">Products</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </nav>
     </header>
 
     <main>
@@ -220,8 +246,8 @@
 
             </div>
 
-            <!-- SEARCH / CONTACT -->
-            <div class="footer-col footer-search">
+            <!-- CONTACT -->
+            <div class="footer-col footer-contact">
                 <h3 class="footer-title">Contacts</h3>
 
 

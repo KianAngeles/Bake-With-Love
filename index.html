@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bake With Love</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaquery.css">
     <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <link
@@ -52,6 +53,32 @@
         </div>
     </header>
 
+    <!-- Mobile Header -->
+    <header class="site-header">
+        <button class="mobile-burger" id="mobile-burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <a href="index.html" class="mobile-logo">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="mobile-cart-icon">
+            <a href="product_list.html#cart-link">
+                <img src="assets/icons/cart.png" alt="Cart" class="mobile-cart-img">
+                <span class="mobile-cart-count">0</span>
+            </a>
+        </div>
+
+        <nav class="mobile-nav-links" id="mobile-nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="feature.html">Features</a>
+            <a href="product_list.html">Products</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+
 
     <main>
         <!-- HERO -->
@@ -84,8 +111,8 @@
             <div class="landing-menu-viewport">
                 <div class="landing-menu-track" id="landingMenuTrack">
                     <div class="landing-menu-card">
-                        <a href="product_list.html?name=Cheesecake&price=200&image=assets/products/cheesecake.PNG">
-                            <img src="assets/products/cheesecake.PNG" alt="Cheesecake">
+                        <a href="product_list.html?name=Croissant&price=110&image=assets/products/cheesecake.PNG">
+                            <img src="assets/products/croissant.jpg" alt="Cheesecake">
                             <span>Cheesecake</span>
                         </a>
                     </div>
@@ -99,16 +126,16 @@
                     </div>
 
                     <div class="landing-menu-card">
-                        <a href="product_list.html?name=Vanilla Cake&price=180&image=assets/products/vanillacake.PNG">
-                            <img src="assets/products/vanillacake.PNG" alt="Vanilla Cake">
-                            <span>Vanilla Cake</span>
+                        <a href="product_list.html?name=Apple Turnover&price=150&image=assets/products/vanillacake.PNG">
+                            <img src="assets/products/appleturnover.PNG" alt="Vanilla Cake">
+                            <span>Apple Turnover</span>
                         </a>
                     </div>
 
                     <div class="landing-menu-card">
-                        <a href="product_list.html?name=Cream Bread&price=120&image=assets/products/creambread.png">
-                            <img src="assets/products/creambread.png" alt="Cream Bread">
-                            <span>Cream Bread</span>
+                        <a href="product_list.html?name=Focaccia Bread&price=180&image=assets/products/creambread.png">
+                            <img src="assets/products/focacciabread.jpg" alt="Cream Bread">
+                            <span>Focaccia Bread</span>
                         </a>
                     </div>
 
@@ -121,13 +148,19 @@
                     </div>
 
                     <div class="landing-menu-card">
-                        <a href="product_list.html?name=Mango Cake&price=190&image=assets/products/mangocake.png">
-                            <img src="assets/products/mangocake.png" alt="Mango Cake">
-                            <span>Mango Cake</span>
+                        <a href="product_list.html?name=Oatmeal Raisin&price=160&image=assets/products/mangocake.png">
+                            <img src="assets/products/oatmealraisin.PNG" alt="Mango Cake">
+                            <span>Oatmeal Raisin</span>
                         </a>
                     </div>
                 </div>
             </div>
+            <div class="landing-swipe-hint">
+                <span class="swipe-icon">«</span>
+                <span> Swipe </span>
+                <span class="swipe-icon">»</span>
+            </div>
+
 
         </section>
 
@@ -359,7 +392,7 @@
                     warmth, and a touch of sweetness. From fresh bread to delightful pastries,
                     our mission is to spread joy through baking.
                 </p>
-                <p class="footer-text">
+                <p class="footer-text footer-text2">
                     Thank you for letting us be part of your kitchen and your celebrations.
                     Together, let’s keep making moments sweeter.
                 </p>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bake With Love</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaquery.css">
     <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <link
@@ -24,7 +25,7 @@
     }
 </style>
 
-<body>
+<body class="product-list-page">
     <header>
         <a href="index.html" class="logo">
             <img src="assets/images/logo.png" alt="Bake With Love Logo" class="logo-img">
@@ -56,6 +57,31 @@
         </div>
     </header>
 
+    <!-- Mobile Header -->
+    <header class="site-header">
+        <button class="mobile-burger" id="mobile-burger-btn" aria-label="Menu">
+            ☰
+        </button>
+
+        <a href="index.html" class="mobile-logo">
+            <h1>Bake With Love</h1>
+        </a>
+
+        <div class="mobile-cart-icon">
+            <a href="product_list.html#cart-link">
+                <img src="assets/icons/cart.png" alt="Cart" class="mobile-cart-img">
+                <span class="mobile-cart-count">0</span>
+            </a>
+        </div>
+
+
+        <nav class="mobile-nav-links" id="mobile-nav-menu">
+            <a href="index.html">Home</a>
+            <a href="feature.html">Features</a>
+            <a href="product_list.html" class="active">Products</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
     <main>
         <div class="product-list-container">
@@ -66,40 +92,49 @@
 
                     <div class="filters">
                         <!-- Category Filter -->
-                        <label for="filterCategory" class="filter-label">Category:</label>
-                        <select id="filterCategory">
-                            <option value="all">All</option>
-                            <option value="cake">Cakes</option>
-                            <option value="bread">Breads</option>
-                            <option value="cookie">Cookies</option>
-                            <option value="pastry">Pastries</option>
-                        </select>
+                        <div class="filter-group">
+                            <label for="filterCategory" class="filter-label">Category</label>
+                            <select id="filterCategory">
+                                <option value="all">All</option>
+                                <option value="cake">Cakes</option>
+                                <option value="bread">Breads</option>
+                                <option value="cookie">Cookies</option>
+                                <option value="pastry">Pastries</option>
+                            </select>
+                        </div>
 
                         <!-- Rating Filter -->
-                        <label for="filterRating" class="filter-label">Rating:</label>
-                        <select id="filterRating">
-                            <option value="all">All Ratings</option>
-                            <option value="5">★★★★★</option>
-                            <option value="4">★★★★☆</option>
-                            <option value="3">★★★☆☆</option>
-                            <option value="2">★★☆☆☆</option>
-                            <option value="1">★☆☆☆☆</option>
-                        </select>
+                        <div class="filter-group">
+                            <label for="filterRating" class="filter-label">Rating</label>
+                            <select id="filterRating">
+                                <option value="all">All Ratings</option>
+                                <option value="5">★★★★★</option>
+                                <option value="4">★★★★☆</option>
+                                <option value="3">★★★☆☆</option>
+                                <option value="2">★★☆☆☆</option>
+                                <option value="1">★☆☆☆☆</option>
+                            </select>
+                        </div>
 
                         <!-- Price Sort -->
-                        <label for="sortPrice" class="filter-label">Price:</label>
-                        <select id="sortPrice">
-                            <option value="default">Sort by Price</option>
-                            <option value="asc">Low → High</option>
-                            <option value="desc">High → Low</option>
-                        </select>
+                        <div class="filter-group">
+                            <label for="sortPrice" class="filter-label">Price</label>
+                            <select id="sortPrice">
+                                <option value="default">Sort by Price</option>
+                                <option value="asc">Low → High</option>
+                                <option value="desc">High → Low</option>
+                            </select>
+                        </div>
 
-                        <!-- Search bar only on product_list.php -->
-                        <div class="search-container">
+                        <!-- Search -->
+                        <div class="filter-group search-container">
+                            <label for="searchBar" class="filter-label">Search</label>
                             <input type="text" id="searchBar" placeholder="Search products">
                         </div>
                     </div>
+
                 </div>
+
 
 
                 <div class="product-list">
@@ -363,8 +398,15 @@
 
             </section>
 
+            <!-- Floating Cart Scroll Button (Mobile only) -->
+            <button id="scroll-to-cart" class="floating-cart-btn" aria-label="Go to Cart">
+                <img src="assets/icons/cart.png" alt="Cart" class="button-mobile-cart-img">
+            </button>
+
+
+
             <!-- Cart Info -->
-            <aside class="cart">
+            <aside class="cart" id="cart-link">
                 <h2>Your cart</h2>
                 <div id="cart-items" class="empty-cart">
                     <img src="assets/images/cart.png" alt="Cart Icon">

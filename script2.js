@@ -1,66 +1,81 @@
 /* Index Best Sellers Looping */
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("landingMenuTrack");
-  let scrollAmount = 0;
-  const gap = parseInt(getComputedStyle(track).gap) || 44;
 
-  function loop() {
-    scrollAmount -= 0.7;
-    track.style.transform = `translate3d(${scrollAmount}px, 0, 0)`;
+  if (window.innerWidth > 480) {
+    let scrollAmount = 0;
+    const gap = parseInt(getComputedStyle(track).gap) || 44;
 
-    const firstCard = track.children[0];
-    const cardWidth = firstCard.offsetWidth + gap;
-
-    // check BEFORE the gap shows
-    if (Math.abs(scrollAmount) >= cardWidth) {
-      track.appendChild(firstCard);
-
-      scrollAmount += cardWidth;
-
+    function loop() {
+      scrollAmount -= 0.7;
       track.style.transform = `translate3d(${scrollAmount}px, 0, 0)`;
+
+      const firstCard = track.children[0];
+      const cardWidth = firstCard.offsetWidth + gap;
+
+      if (Math.abs(scrollAmount) >= cardWidth) {
+        track.appendChild(firstCard);
+        scrollAmount += cardWidth;
+        track.style.transform = `translate3d(${scrollAmount}px, 0, 0)`;
+      }
+
+      requestAnimationFrame(loop);
     }
 
-    requestAnimationFrame(loop);
+    loop();
   }
-
-  loop();
 });
 
 /* Testimonials Slider */
 document.addEventListener("DOMContentLoaded", () => {
   const testimonials = document.querySelectorAll(".testimonial-box");
-  const itemsPerPage = 3;
   let currentIndex = 0;
-  let direction = "next"; // keep track of slide direction
+
+  function getItemsPerPage() {
+    if (window.innerWidth <= 480) return 1;  
+    if (window.innerWidth <= 1024) return 3; 
+    return 3;                                
+  }
 
   function showTestimonials() {
+    const itemsPerPage = getItemsPerPage();
     testimonials.forEach((item, i) => {
       item.classList.remove("active", "slide-next", "slide-prev");
+      item.style.display = "none"; 
+
       if (i >= currentIndex && i < currentIndex + itemsPerPage) {
-        item.classList.add("active", direction === "next" ? "slide-next" : "slide-prev");
+        item.classList.add("active");
+        item.style.display = "block"; 
       }
     });
   }
 
-  // Next
   window.nextTestimonials = function () {
-    direction = "next";
+    const itemsPerPage = getItemsPerPage();
     currentIndex += itemsPerPage;
     if (currentIndex >= testimonials.length) currentIndex = 0;
     showTestimonials();
   };
 
-  // Prev
   window.prevTestimonials = function () {
-    direction = "prev";
+    const itemsPerPage = getItemsPerPage();
     currentIndex -= itemsPerPage;
     if (currentIndex < 0) currentIndex = testimonials.length - itemsPerPage;
     showTestimonials();
   };
 
-  // Init
+  window.addEventListener("resize", () => {
+    currentIndex = 0;
+    showTestimonials();
+  });
+
   showTestimonials();
 });
+
+
+
+
+
 
 
 /* Landing Hero Text Switch */
@@ -152,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form) {
     form.addEventListener("submit", (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
 
       const name = form.querySelector("input[name='name']").value.trim();
       const email = form.querySelector("input[name='email']").value.trim();
